@@ -1,0 +1,49 @@
+// function getName(callback){
+//     // api 
+//     setTimeout(()=> {
+//         callback({fname : "John"})
+//     }, 2000)
+// }
+// let fname = getName(cb)
+
+
+// function cb(value){
+//     fname = value
+// }
+
+// console.log(fname)
+
+// function fileops(){
+//     setTimeout(() => {
+//         console.log("File Read Complete, Starting writing next file")
+//         setTimeout(() => {
+//             console.log("File Writing Complete, Starting Reading next file")
+//             setTimeout(() => {
+//                 console.log("File Reading Complete,Ending File Operations")
+//             }, 1000)
+//         }, 2000)
+//     }, 1000)
+// }
+
+// callback, Promise, async await
+// Promise 
+
+
+
+function getName(){
+    return new Promise((resolve, reject) => {
+        // Api Request
+        let error = false;
+        let data = {name : 'John'}
+        if(error){
+            reject("An Error Occured: ")
+        }else{
+            resolve(data)
+        }
+    })
+}
+let fname = undefined
+
+getName()
+.then((d) => fname = d )
+.catch((err )=> console.log(err))
