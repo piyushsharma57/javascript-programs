@@ -1,0 +1,34 @@
+// DOM Manipulation : Document Object Model
+let h1 = document.getElementById("heading")
+let h1Class = document.getElementsByClassName("headClass")
+let h1Tag = document.getElementsByTagName("h1")
+let h1Parent = h1Tag[0].parentElement
+let h1Sibling = h1Tag[0].nextSibling
+let h1ElementSibling = h1Tag[0].nextElementSibling.nextElementSibling
+let previousSibling = h1ElementSibling.previousElementSibling;
+let childElCount = h1Parent.childElementCount
+let childNodes = h1Parent.childNodes
+let childrens = h1Parent.children
+
+let h3Class = document.querySelector(".headClass3")
+
+// h3Class.innerText = 'Hello'
+// h3Class.textContent = 'Hello'
+// h3Class.innerHTML = 'Hello, <span>World</span>'
+// h3Class.classList.add("js")
+// h3Class.classList.remove("new")
+// h3Class.classList.toggle("new")
+
+
+
+console.log(h1)
+console.log(h1Class)
+console.log(h1Tag)
+console.log(h1Parent)
+console.log(h1Sibling)
+console.log(h1ElementSibling)
+console.log(previousSibling)
+console.log(childElCount)
+console.log(h3Class)
+console.log(h3Class.innerText)
+console.log(h3Class.classList)
