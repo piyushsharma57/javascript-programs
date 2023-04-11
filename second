@@ -1,0 +1,68 @@
+// count no of vowels in a string
+function countVowels(str){
+  let arr = str.split("");
+  let count = 0;
+  let vowels = ["a", "i", "e", "o", "u"]
+  for(let i = 0; i < arr.length; i++){
+    if(vowels.includes(arr[i].toLowerCase())){
+      count++
+    }
+    // if(arr[i].toLowerCase() == "a" || arr[i].toLowerCase() == "i" || arr[i].toLowerCase() == "e" || arr[i].toLowerCase() == "o"|| arr[i].toLowerCase() == "u"){
+    //   count++;
+    // }
+  }
+  return count;
+}
+
+// count number of instance of a character in a string
+function countCharInAString(str, char){
+  str = str.split("")
+  let count = 0;
+  for(let i =0; i < str.length; i++){
+    if(str[i].toLowerCase() == char.toLowerCase()){
+      count++
+    }
+  }
+  return count;
+}
+
+// get indexes of a char where it appears in a string
+function findIndecesOfACharInAStr(str, char){
+  str = str.split("")
+  // let count = 0;
+  let indexes = [];
+  for(let i =0; i < str.length; i++){
+    if(str[i] == char){
+      indexes.push(i)
+    }
+  }
+  return indexes;
+}
+
+// delete duplicate character from a string
+function deleteDuplicateCharFromAString(str){
+    str = str.split("");
+    let uniqueChar = [];
+    for(let i = 0; i < str.length ; i++){
+      if(uniqueChar.includes(str[i])){
+        continue;
+      }else{
+        uniqueChar.push(str[i]);
+      }
+    }
+
+    return uniqueChar.join("")
+}
+
+// capitalize the first letter of each word in a string
+function capitalize(str){
+  let words = str.toLowerCase().split(" ");
+  for(let i = 0; i < words.length ; i++){
+    words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+  }
+
+  return words.join(" ")
+}
+
+// truncate a string : function truncate(str, num of char in this string) : if number is greater than the length of the string the function should return a string of that length followed by ...
+function truncate(str , numOfChar)
