@@ -1,0 +1,156 @@
+// function readFile(){
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve("File Reading Complete")
+//         }, 2000)
+//     })
+// }
+// function writeFile(){
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve("File Writing Complete")
+//         }, 3000)
+//     })
+// }
+
+// console.log('Calling Async Function')
+// async function fileOps(){
+//     // readFile().then(() => {}).catch()
+//     let readData = await readFile()
+//     console.log("Hello")
+//     let writeResult = await writeFile();
+//     let readData2 = await readFile()
+//     return readData
+// }
+// let mypromise = fileOps()
+// console.log('Called Async Function')
+
+// console.log(mypromise)
+
+// let users = undefined;
+// fetch("https://63b3c0015901da0ab3864e98.mockapi.io/cars")
+//   .then((response) => (
+//      response.json()
+//   ))
+//   .then(data => console.log(data))
+//   .catch((err) => console.error(err));
+
+// let users = undefined
+async function getCars() {
+  try {
+    let res = await fetch("https://63b3c0015901da0ab3864e98.mockapi.io/cars");
+    let data = await res.json();
+    users = data;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+
+let car = undefined
+async function getCar(id) {
+  try {
+    let res = await fetch(`https://63b3c0015901da0ab3864e98.mockapi.io/cars/${id}`);
+    let data = await res.json();
+    car = data;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+
+
+// getUsers()
+
+async function createUser(car) {
+  try {
+    let res = await fetch("https://63b3c0015901da0ab3864e98.mockapi.io/cars", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(car),
+    });
+
+    if (res.ok) {
+      console.log("Car Created");
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+async function updateCar(id, car){
+    try {
+        let res = await fetch(`https://63b3c0015901da0ab3864e98.mockapi.io/cars/${id}`, {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(car),
+      });
+      let updatedCar = await res.json()
+      console.log(updatedCar);
+      if(res.ok){
+        console.log("Car successfully updated")
+      }
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+
+async function deleteCar(id){
+    try {
+        let res = await fetch(`https://63b3c0015901da0ab3864e98.mockapi.io/cars/${id}`, {
+        method: "DELETE",
+        headers: {
+          "content-type": "application/json",
+        }
+      });
+      let deletedCar = await res.json()
+      console.log(deletedCar);
+      if(res.ok){
+        console.log("Car successfully Deleted")
+      }
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+// deleteCar(22)
+
+
+// CRUD : Create / Read / Update / Delete
+
+// let car2 = {
+//     model : "dZire",
+//     manufacturer : "Maruti-Suzuki",
+//     name : "Swift Dzire",
+//     fuel : "Petrol",
+//     color : "Black",
+//     price : 650000
+// }
+
+// updateCar(21, car2)
+
+
+
+// createUser({
+//     model : "dZire",
+//     manufacturer : "Maruti",
+//     name : "Swift Dzire",
+//     fuel : "Petrol",
+//     color : "White",
+//     price : 650000
+// })
+
+// console.log("Hello")
+
+// try {
+//    throw new Error("An Error has occurred")
+// } catch (error) {
+//     console.log(error.message)
+// }
+
+// console.log("Hello")
