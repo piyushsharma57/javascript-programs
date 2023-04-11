@@ -1,0 +1,60 @@
+// isPrime(number)
+function isPrime(number) {
+  for (let i = 2; i < number; i++) {
+    if (number % i === 0) {
+      return false;
+    }
+  }
+
+  return true;
+}
+function primeSeries(limit) {
+  for (let i = 2; i <= limit; i++) {
+    if (isPrime(i)) {
+      console.log(i);
+    }
+  }
+}
+
+function getLastDigit(number) {
+  return number % 10;
+}
+
+function trimLastDigit(number) {
+  return parseInt(number / 10);
+}
+
+function totalDigits(number) {
+  let count = 0;
+  for (; number > 0; ) {
+    number = trimLastDigit(number);
+    count++;
+  }
+  return count;
+}
+
+function isArmstrong(number) {
+  let pow = totalDigits(number);
+  let originalNumber = number;
+  let result = 0;
+  for (; number > 0; ) {
+    result = result + getLastDigit(number) ** pow;
+    number = trimLastDigit(number);
+  }
+  return result === originalNumber;
+}
+
+function armstrongSeries(limit){
+  for(let i = 1; i <=limit; i++){
+    if(isArmstrong(i)){
+      console.log(i)
+    }
+  }
+}
+
+// reverse a number 
+// isPalindrome(number) -- 121, 151, 111
+// getFirstDigit(number)
+// sumOfFirstAndDigit(number)
+// factors of a number
+// primeFactor of a number
