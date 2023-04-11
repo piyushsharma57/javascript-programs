@@ -66,3 +66,253 @@ function capitalize(str){
 
 // truncate a string : function truncate(str, num of char in this string) : if number is greater than the length of the string the function should return a string of that length followed by ...
 function truncate(str , numOfChar)
+
+let isEven = num => num % 2 == 0
+
+
+// isDivisible(divident, divisor)
+let isDivisible =(divident, divisor) =>  divident % divisor == 0;
+
+// isDivisibleBy3and5(number)
+let isDivisibleBy3and5 =number => isDivisible(number, 3) && isDivisible(number, 5)
+
+// isPrime(number)
+function isPrime(number) {
+  for (let i = 2; i < number; i++) {
+    if (number % i === 0) {
+      return false;
+    }
+  }
+
+  return true;
+}
+function primeSeries(limit) {
+  for (let i = 2; i <= limit; i++) {
+    if (isPrime(i)) {
+      console.log(i);
+    }
+  }
+}
+
+let getLastDigit = number => number % 10;
+let trimLastDigit  = number => parseInt(number / 10);
+
+
+function totalDigits(number) {
+  let count = 0;
+  for (; number > 0; ) {
+    number = trimLastDigit(number);
+    count++;
+  }
+  return count;
+}
+
+function isArmstrong(number) {
+  let pow = totalDigits(number);
+  let originalNumber = number;
+  let result = 0;
+  for (; number > 0; ) {
+    result = result + getLastDigit(number) ** pow;
+    number = trimLastDigit(number);
+  }
+  return result === originalNumber;
+}
+
+function armstrongSeries(limit){
+  for(let i = 1; i <=limit; i++){
+    if(isArmstrong(i)){
+      console.log(i)
+    }
+  }
+}
+
+function reverseNumber(number){
+  // take a reverse variable
+  let reverse = 0;
+  // run a loop till number is greater than zero
+  for(;number > 0;){
+    // take last digit and add it to reverse * 10
+    reverse = (reverse * 10) + getLastDigit(number);
+    // trimlastDigit from the number
+    number = trimLastDigit(number)
+  }
+  // return reverse number from the function
+  return reverse
+}
+
+// isPalindrome(number) -- 121, 151, 111
+function isPalindrome(number){
+  return reverseNumber(number) === number
+}
+
+// palindromeSeries(limit)
+function palindromeSeries(limit){
+  for(let i = 1; i <= limit; i++){
+    if(isPalindrome(i)){
+      console.log(i)
+    }
+  }
+}
+
+// getFirstDigit(number)
+function getFirstDigit(number){
+  return getLastDigit(reverseNumber(number))
+}
+// sumOfFirstAndLastDigit(number)
+function sumOfFirstAndLastDigit(number){
+  return getFirstDigit(number) + getLastDigit(number);
+}
+
+// factors of a number
+function factorsOfANumber(number){
+  for(let i = 1; i <= number; i++){
+    if(isDivisible(number, i)){
+      console.log(i)
+    }
+  }
+}
+
+// primeFactor of a number
+function primeFactors(number){
+  for(let i=1; i <= number ; i++){
+    if(isDivisible(number, i) && isPrime(i)){
+      console.log(i)
+    }
+  }
+}
+
+// count no of vowels in a string
+function countVowels(str){
+  let arr = str.split("");
+  let count = 0;
+  let vowels = ["a", "i", "e", "o", "u"]
+  for(let i = 0; i < arr.length; i++){
+    if(vowels.includes(arr[i].toLowerCase())){
+      count++
+    }
+    // if(arr[i].toLowerCase() == "a" || arr[i].toLowerCase() == "i" || arr[i].toLowerCase() == "e" || arr[i].toLowerCase() == "o"|| arr[i].toLowerCase() == "u"){
+    //   count++;
+    // }
+  }
+  return count;
+}
+
+// count number of instance of a character in a string
+function countCharInAString(str, char){
+  str = str.split("")
+  let count = 0;
+  for(let i =0; i < str.length; i++){
+    if(str[i].toLowerCase() == char.toLowerCase()){
+      count++
+    }
+  }
+  return count;
+}
+
+// get indexes of a char where it appears in a string
+function findIndecesOfACharInAStr(str, char){
+  str = str.split("")
+  // let count = 0;
+  let indexes = [];
+  for(let i = 0; i < str.length; i++){
+    if(str[i] == char){
+      indexes.push(i)
+    }
+  }
+  return indexes;
+}
+
+// delete duplicate character from a string
+function deleteDuplicateCharFromAString(str){
+    str = str.split("");
+    let uniqueChar = [];
+    for(let i = 0; i < str.length ; i++){
+      if(uniqueChar.includes(str[i])){
+        continue;
+      }else{
+        uniqueChar.push(str[i]);
+      }
+    }
+
+    return uniqueChar.join("")
+}
+
+// capitalize the first letter of each word in a string
+/**
+ * 
+ * @param {string} str 
+ * @returns Return a string with all the words with capital letters
+ */
+function capitalize(str){
+  let words = str.toLowerCase().split(" ");
+  for(let i = 0; i < words.length ; i++){
+    words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+  }
+
+  return words.join(" ")
+}
+
+// truncate a string : function truncate(str, num of char in this string) : if number is greater than the length of the string the function should return a string of that length followed by ...
+
+
+
+/**
+ * This function returns a sliced version of string if the number of characters provided by user is less than the length of string.
+ * @param {String} str 
+ * @param {Number} numOfChar 
+ * @returns Returns a sliced version of a given string
+ */
+function truncate(str , numOfChar){
+  console.log(arguments)
+  if(str.length <= numOfChar){
+    return str
+  }else{
+    return str.slice(0, numOfChar) + "..."
+  }
+}
+
+// truncate("sdjhfjdsh", 5)
+
+// anonymous function
+
+// let name = function(){
+  
+// }
+
+// self/immediately invoked function
+// (function myname(){
+//   console.log("John")
+// })();
+
+
+// function myname(){
+//  return function(){
+//   console.log("John")
+//  }
+// };
+
+// myname()
+
+// arrow functions
+
+// let name = str => true
+
+
+// function myargs(){
+//   console.log(arguments)
+// }
+
+function sum(){
+  let result = 0;
+  for(let i = 0; i < arguments.length; i++){
+    result += arguments[i];
+  }
+  return result;
+}
+
+
+
+
+
+// sum(1, 2)
+// myargs(12,3,45,4,8,7,87)
