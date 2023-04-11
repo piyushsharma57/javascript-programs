@@ -52,6 +52,78 @@ function armstrongSeries(limit){
   }
 }
 
+function reverseNumber(number){
+  // take a reverse variable
+  let reverse = 0;
+  // run a loop till number is greater than zero
+  for(;number > 0;){
+    // take last digit and add it to reverse * 10
+    reverse = (reverse * 10) + getLastDigit(number);
+    // trimlastDigit from the number
+    number = trimLastDigit(number)
+  }
+  // return reverse number from the function
+  return reverse
+}
+
+// isPalindrome(number) -- 121, 151, 111
+function isPalindrome(number){
+  return reverseNumber(number) === number
+}
+
+// palindromeSeries(limit)
+function palindromeSeries(limit){
+  for(let i = 1; i <= limit; i++){
+    if(isPalindrome(i)){
+      console.log(i)
+    }
+  }
+}
+
+// getFirstDigit(number)
+function getFirstDigit(number){
+  return getLastDigit(reverseNumber(number))
+}
+// sumOfFirstAndLastDigit(number)
+function sumOfFirstAndLastDigit(number){
+  return getFirstDigit(number) + getLastDigit(number);
+}
+
+// factors of a number
+function factorsOfANumber(number){
+  for(let i = 1; i <= number; i++){
+    if(isDivisible(number, i)){
+      console.log(i)
+    }
+  }
+}
+
+// primeFactor of a number
+function primeFactors(number){
+  for(let i=1; i <= number ; i++){
+    if(isDivisible(number, i) && isPrime(i)){
+      console.log(i)
+    }
+  }
+}
+
+// count no of vowels in a string
+function countVowels(str){
+  let arr = str.split("");
+  let count = 0;
+  let vowels = ["a", "i", "e", "o", "u"]
+  for(let i = 0; i < arr.length; i++){
+    if(vowels.includes(arr[i].toLowerCase())){
+      count++
+    }
+    // if(arr[i].toLowerCase() == "a" || arr[i].toLowerCase() == "i" || arr[i].toLowerCase() == "e" || arr[i].toLowerCase() == "o"|| arr[i].toLowerCase() == "u"){
+    //   count++;
+    // }
+  }
+  return count;
+}
+
+// count number of instance of a character in a string
 // reverse a number 
 // isPalindrome(number) -- 121, 151, 111
 // getFirstDigit(number)
