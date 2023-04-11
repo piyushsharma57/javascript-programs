@@ -1,0 +1,163 @@
+let json = `
+[
+  {
+   "model": "Mustang",
+   "name": "Rolls Royce V90",
+   "manufacturer": "Toyota",
+   "fuel": "Hybrid",
+   "color": "white",
+   "id": "1"
+  },
+  {
+   "model": "XTS",
+   "name": "Smart Model Y",
+   "manufacturer": "Bentley",
+   "fuel": "Electric",
+   "color": "olive",
+   "id": "2"
+  },
+  {
+   "model": "Prius",
+   "name": "Ford Wrangler",
+   "manufacturer": "Bentley",
+   "fuel": "Gasoline",
+   "color": "turquoise",
+   "id": "3"
+  },
+  {
+   "model": "Roadster",
+   "name": "Honda Mercielago",
+   "manufacturer": "Ford",
+   "fuel": "Hybrid",
+   "color": "silver",
+   "id": "4"
+  },
+  {
+   "model": "Aventador",
+   "name": "Land Rover Ranchero",
+   "manufacturer": "Honda",
+   "fuel": "Electric",
+   "color": "fuchsia",
+   "id": "5"
+  },
+  {
+   "model": "Altima",
+   "name": "Kia Escalade",
+   "manufacturer": "Hyundai",
+   "fuel": "Electric",
+   "color": "salmon",
+   "id": "6"
+  },
+  {
+   "model": "Altima",
+   "name": "Honda Silverado",
+   "manufacturer": "Mazda",
+   "fuel": "Gasoline",
+   "color": "azure",
+   "id": "7"
+  },
+  {
+   "model": "Corvette",
+   "name": "Bugatti PT Cruiser",
+   "manufacturer": "Cadillac",
+   "fuel": "Electric",
+   "color": "green",
+   "id": "8"
+  },
+  {
+   "model": "Grand Cherokee",
+   "name": "Mercedes Benz Durango",
+   "manufacturer": "Dodge",
+   "fuel": "Gasoline",
+   "color": "black",
+   "id": "9"
+  },
+  {
+   "model": "Wrangler",
+   "name": "Tesla Corvette",
+   "manufacturer": "Smart",
+   "fuel": "Diesel",
+   "color": "white",
+   "id": "10"
+  },
+  {
+   "model": "2",
+   "name": "Rolls Royce Silverado",
+   "manufacturer": "Bugatti",
+   "fuel": "Diesel",
+   "color": "lavender",
+   "id": "11"
+  },
+  {
+   "model": "Model X",
+   "name": "Jaguar Grand Cherokee",
+   "manufacturer": "Jaguar",
+   "fuel": "Electric",
+   "color": "yellow",
+   "id": "12"
+  },
+  {
+   "model": "Prius",
+   "name": "BMW Grand Caravan",
+   "manufacturer": "Chevrolet",
+   "fuel": "Hybrid",
+   "color": "plum",
+   "id": "13"
+  },
+  {
+   "model": "Model Y",
+   "name": "Honda Countach",
+   "manufacturer": "Volvo",
+   "fuel": "Electric",
+   "color": "teal",
+   "id": "14"
+  },
+  {
+   "model": "ATS",
+   "name": "Kia Durango",
+   "manufacturer": "Bugatti",
+   "fuel": "Hybrid",
+   "color": "pink",
+   "id": "15"
+  },
+  {
+   "model": "Malibu",
+   "name": "Hyundai Durango",
+   "manufacturer": "Maserati",
+   "fuel": "Gasoline",
+   "color": "indigo",
+   "id": "16"
+  },
+  {
+   "model": "Impala",
+   "name": "Ferrari Expedition",
+   "manufacturer": "Bugatti",
+   "fuel": "Diesel",
+   "color": "maroon",
+   "id": "17"
+  },
+  {
+   "model": "Escalade",
+   "name": "Toyota Explorer",
+   "manufacturer": "Toyota",
+   "fuel": "Diesel",
+   "color": "lime",
+   "id": "18"
+  },
+  {
+   "model": "Beetle",
+   "name": "Maserati Corvette",
+   "manufacturer": "Toyota",
+   "fuel": "Diesel",
+   "color": "orange",
+   "id": "19"
+  },
+  {
+   "model": "Grand Cherokee",
+   "name": "Nissan Model X",
+   "manufacturer": "Dodge",
+   "fuel": "Gasoline",
+   "color": "olive",
+   "id": "20"
+  }
+ ]`
