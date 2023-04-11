@@ -1,0 +1,141 @@
+// Encapsulation 
+// let person1 = {
+//     name : "John",
+//     age : 22,
+//     isVerified : true,
+
+//     speak(){
+//         console.log("Speaking...")
+//     },
+//     walk(){
+//         console.log("Walking...")
+//     }
+// }
+
+// class Person{
+//     constructor(name, age){
+//         this.name = name;
+//         this.age = age;
+//     }
+   
+//     isVerified = false;
+
+//     speak(){
+//         console.log(`${this.name} is Speaking`)
+//     };
+//     walk(){
+//         console.log(`${this.name} is walking`)
+//     }
+// }
+
+// let person1 = new Person("John", 22);
+// let person2 = new Person("Alex", 15);
+
+
+// // inheritance 
+// class Student  extends Person{
+//     constructor(name , age, course){
+//         super(name, age);
+//         this.course = course;
+//     }
+
+//     studying(){
+//         console.log(`${this.name} is studying`)
+//     }
+// }
+
+// class SpecialStudent extends Student{
+//     constructor(name , age, course, scholarship){
+//         super(name, age, course);
+//         this.scholarship = scholarship;
+//     }
+// }
+
+// let student1 = new Student("Aman", 21, "BCA")
+// let specialStudent1 = new SpecialStudent("Aryan", 19, "B.Sc", "PPMY")
+// console.log(specialStudent1)
+// student1.walk()
+// student1.speak()
+// console.log(student1.name)
+
+
+class Television{
+    constructor(model, color){
+        this.model = model;
+        this.color = color;
+    }
+    #volume = 0;
+    #isRunning = false;
+    #MAX_VOLUME = 10;
+    #MIN_VOLUME = 0
+
+    get volume(){
+        return this.#volume
+    };
+
+    set volume(value){
+        if(value >= this.#MIN_VOLUME && value <= this.#MAX_VOLUME){
+            this.#volume = value;
+        }else{
+            throw new Error("Invalid volume")
+        }
+    }
+
+
+    on(){
+        if(this.#isRunning) throw new Error("Tv is already running");
+        this.#isRunning = true;
+        console.log("Tv is running")
+    };
+    off(){
+        if(!this.#isRunning) throw new Error("Tv is not started yet");
+        this.#isRunning = false;
+        console.log("Tv Stopped")
+    };
+    volUp(){
+        if(!this.#isRunning) throw new Error("Tv is not started yet");
+        if(this.#volume >= this.#MAX_VOLUME) throw new Error("Maximum #volume exceeded");
+        this.#volume++;
+        console.log(this.#volume)
+    };
+    volDown(){
+        if(!this.#isRunning) throw new Error("Tv is not started yet");
+        if(this.#volume <= this.#MIN_VOLUME) throw new Error("Minimum #volume exceeded");
+        this.#volume--;
+        console.log(this.#volume)
+    }
+}
+
+let tv1 = new Television("sony", "black");
+
+tv1.on()
+
+tv1.volume = 5
+console.log(tv1.volume) 
+
+class Person {
+    constructor(name, age){
+        this.name = name;
+        this.age = age;
+    }
+
+    speak(){
+        console.log(this.name + " is speaking")
+    }
+}
+
+class Student extends Person {
+    constructor(name , age, course){
+        super(name, age)
+        this.course = course;
+    }
+
+    speak(){
+        super.speak()
+        console.log("Student Object Method")
+    }
+}
+
+let student1 = new Student("Aman", 21, "BCA");
+console.log(student1)
+student1.speak();
